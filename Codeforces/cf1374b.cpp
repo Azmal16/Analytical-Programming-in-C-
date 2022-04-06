@@ -11,15 +11,22 @@ int main()
             cout << m << endl;
             break;
         }
-        else if (n % 6 == 0)
+        if (n % 6 == 0)
         {
             n = n / 6;
             m++;
+            cout << 'div';
+        }
+        else if ((n * 2) % 6 == 0)
+        {
+            n = n * 2;
+            n = n / 6;
+            m += 2;
         }
         else
         {
-            n = n * 2;
-            m++;
+            cout << "-1" << endl;
+            break;
         }
     }
 }
