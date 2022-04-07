@@ -1,21 +1,22 @@
 #include <iostream>
 using namespace std;
-int main()
+long long int n, t, m;
+int conj()
 {
-    long long int n, m = 0;
+    m = 0;
     cin >> n;
-    while (1)
+    while (n != 1)
     {
-        if (n == 1)
-        {
-            cout << m << endl;
-            break;
-        }
+        // if (n == 1)
+        // {
+        //     //cout << m << endl;
+        //     break;
+        // }
         if (n % 6 == 0)
         {
             n = n / 6;
             m++;
-            cout << 'div';
+            // cout << 'div';
         }
         else if ((n * 2) % 6 == 0)
         {
@@ -25,8 +26,26 @@ int main()
         }
         else
         {
-            cout << "-1" << endl;
+            // cout << "-1" << endl;
+            m = -1;
             break;
         }
+    }
+    // cout << m << endl;
+    return m;
+}
+
+int main()
+{
+
+    cin >> t;
+    int arr[t];
+    for (int i = 0; i < t; i++)
+    {
+        arr[i] = conj();
+    }
+    for (int i = 0; i < t; i++)
+    {
+        cout << arr[i] << endl;
     }
 }
